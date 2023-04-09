@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vyaparify</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+      /* Custom CSS styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        border: 1px solid #252424;
+        padding: 10px;
+        padding-top: 70px; /* Add top padding here */
+        padding-left: 20px; /* Add left padding here */
+        padding-right: 20px; /* Add right padding here */
+      }
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 10px 0;
+      }
+      nav {
+        background-color: #fa5503e6;
+        height: 50px;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        width: 100%;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+      label {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      input[type="text"] {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      button[type="submit"] {
+        background-color: #008CBA;
+        color: #ffffff;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button[type="submit"]:hover {
+        background-color: #006080;
+      }
+      div {
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        padding: 20px;
+        margin-top: 50px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      footer {
+        background-color: #fa5503;
+        color: #ffffff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <nav >      
+    <h1 >USE ChatGPT TO GENERATE DESCRIPTION</h1>
+  </nav>
+
+
+  <body>
+    <div id="content">
+      <form method="POST">
+        <label for="input">Enter keywords:</label>
+        <input type="text" id="input" name="input">
+        <button type="submit">Generate Description</button>
+      </form>
+      {% if description %}
+        <div>
+          <h2>Description:</h2>
+          <p>{{ description }}</p>
+        </div>
+      {% endif %}
+    </div>
+    
+    <script>
+      /* Custom JavaScript code */
+      const inputElement = document.getElementById('input');
+      inputElement.addEventListener('input', function() {
+        this.value = this.value.toLowerCase();
+      });
+    </script>
+  </body>
+
+  <footer>
+    <p> Powered by vyaparify</p>
+</footer>
+</html>
