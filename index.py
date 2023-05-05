@@ -27,7 +27,7 @@ def home():
         establishment = request.form['establishment']
         services = request.form['services']
         location = request.form['location']
-        prompt = f"{company_name} establish in year {establishment} that provides {services}, situated in {location}"
+        prompt = f"generate description of {company_name} establish in year {establishment}, including services {services}, situated in {location}"
         description = generate_description(prompt)
         return render_template('index.html', description=description)
     else:
