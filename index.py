@@ -27,7 +27,7 @@ def home():
         establishment = request.form['establishment']
         services = request.form['services']
         location = request.form['location']
-        prompt = f"generate 150 words description for a comany named {company_name} establish in year {establishment} and situated in {location}, which provides services {services}."
+        prompt = f"Generate grammatically correct with only 150 characters business description for business, Business name {company_name} and Establish year as {establishment} and situated in {location}, Keyword for business are {services}."
         description = generate_description(prompt)
         return render_template('index.html', description=description)
     else:
