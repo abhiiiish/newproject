@@ -12,7 +12,7 @@ def generate_description(prompt):
     response = openai.Completion.create(
         engine=model_engine,
         prompt=prompt,
-        max_tokens=45,
+        max_tokens=150,
         n=1,
         stop=None,
         temperature=0.5,
@@ -27,7 +27,7 @@ def home():
         establishment = request.form['establishment']
         services = request.form['services']
         location = request.form['location']
-        prompt = f"Generate grammatically correct with only 150 characters business description for business, Business name {company_name} and Establish year as {establishment} and situated in {location}, Keyword for business are {services}. And also generate five different descriptions, present one by one."
+        prompt = f"Generate grammatically correct with only 150 characters business description for business, Business name {company_name} and Establish year as {establishment} and situated in {location}, Keyword for business are {services}. And also generate five different descriptions from the generated one, present in order."
         description = generate_description(prompt)
         return render_template('index.html', description=description)
     else:
