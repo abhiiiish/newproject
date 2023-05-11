@@ -12,7 +12,7 @@ def generate_description(prompt):
     response = openai.Completion.create(
         engine=model_engine,
         prompt=prompt,
-        max_tokens=1000,
+        max_tokens=1500,
         n=1,
         stop=None,
         temperature=0.5,
