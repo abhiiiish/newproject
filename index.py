@@ -12,7 +12,7 @@ def generate_description(prompt):
     response = openai.Completion.create(
         engine=model_engine,
         prompt=prompt,
-        max_tokens=700,
+        max_tokens=1000,
         n=1,
         stop=None,
         temperature=0.5,
@@ -27,7 +27,7 @@ def home():
         establishment = request.form['establishment']
         services = request.form['services']
         location = request.form['location']
-        prompt = f"Generate description for  Business name {company_name} and Establish year in {establishment}. Services  are {services} and  located in {location} and also brief out services."
+        prompt = f"Generate description for  Business name {company_name} , which Establish in year {establishment}. Their specializatio  are {services} and  located in {location}. And also brief out services privided by them."
         description = generate_description(prompt)
         return render_template('index.html', description=description)
     else:
